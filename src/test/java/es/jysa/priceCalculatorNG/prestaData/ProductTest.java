@@ -1,10 +1,14 @@
-package prestaData;
+package es.jysa.priceCalculatorNG.prestaData;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.Test;
+
+import es.jysa.priceCalculatorNG.prestaData.PrestaFactory;
+import es.jysa.priceCalculatorNG.prestaData.Price;
+import es.jysa.priceCalculatorNG.prestaData.Product;
 
 public class ProductTest {
 

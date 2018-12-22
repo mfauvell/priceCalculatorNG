@@ -1,4 +1,4 @@
-package prestaData;
+package es.jysa.priceCalculatorNG.prestaData;
 
 import java.time.LocalDate;
 
@@ -13,5 +13,9 @@ public final class PrestaFactory {
 
 	public static Product getProduct(String reference, String code, Price price) throws IllegalArgumentException {
 		return new Product(reference, code, price);
+	}
+
+	public static ProductUpdate getProductUpdate(String reference, String code, Price priceNew, Price priceOld) {
+		return new ProductUpdate(reference, code, priceNew, priceOld);
 	}
 }

@@ -1,10 +1,13 @@
-package prestaData;
+package es.jysa.priceCalculatorNG.prestaData;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
+
+import es.jysa.priceCalculatorNG.prestaData.PrestaFactory;
+import es.jysa.priceCalculatorNG.prestaData.Price;
 
 public class PriceTest {
 	

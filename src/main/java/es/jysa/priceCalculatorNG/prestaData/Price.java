@@ -1,4 +1,4 @@
-package prestaData;
+package es.jysa.priceCalculatorNG.prestaData;
 
 import java.time.LocalDate;
 
