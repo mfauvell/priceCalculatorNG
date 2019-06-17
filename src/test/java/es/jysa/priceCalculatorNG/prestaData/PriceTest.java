@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 
-import es.jysa.priceCalculatorNG.prestaData.PrestaFactory;
+import es.jysa.priceCalculatorNG.PrestaFactory;
 import es.jysa.priceCalculatorNG.prestaData.Price;
 
 public class PriceTest {

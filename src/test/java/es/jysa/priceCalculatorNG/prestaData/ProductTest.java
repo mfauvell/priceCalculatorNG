@@ -6,7 +6,7 @@ import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.Test;
 
-import es.jysa.priceCalculatorNG.prestaData.PrestaFactory;
+import es.jysa.priceCalculatorNG.PrestaFactory;
 import es.jysa.priceCalculatorNG.prestaData.Price;
 import es.jysa.priceCalculatorNG.prestaData.Product;
 

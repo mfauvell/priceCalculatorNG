@@ -2,8 +2,8 @@ package es.jysa.priceCalculatorNG.prestaData;
 
 public class Product {
 	
-	private String reference;
-	private String code;
+	private String reference; //Referencia en el prestashop
+	private String code; //Código de la pieza
 	private Price price;
 
 	public Product(String reference, String code, Price price) {
