@@ -2,42 +2,42 @@ package es.jysa.priceCalculatorNG.prestaData;
 
 public class PrestaConfig {
 
-	public Object getBasicLimit() {
+	public Double getBasicLimit() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Object getFirstLimit() {
+	public Double getFirstLimit() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Object getSecondLimit() {
+	public Double getSecondLimit() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Object getBasicIncrement() {
+	public Double getBasicIncrement() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Object getFirstPercentageIncrement() {
+	public Double getFirstPercentageIncrement() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Object getSecondPercentageIncrement() {
+	public Double getSecondPercentageIncrement() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Object getThirdPercentageIncrement() {
+	public Double getThirdPercentageIncrement() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Object getEqualIncrement() {
+	public Double getEqualIncrement() {
 		// TODO Auto-generated method stub
 		return null;
 	}
