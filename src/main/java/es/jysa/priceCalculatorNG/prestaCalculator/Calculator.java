@@ -22,7 +22,11 @@ public class Calculator {
 		return priceProvider;
 	}
 
-	public Price calculatePrice(Product productHasUpdate) {
+	public Price calculatePrice(Product productHasUpdate) throws NotPriceProviderException, NotPriceFindException {
+		if (priceProvider == null) {
+			throw new NotPriceProviderException("Not price provider configured");
+		}
+		
 		Price originalPrice = priceProvider.getNewPrice(productHasUpdate.getCode());
 		
 		Double increment = 0.0;

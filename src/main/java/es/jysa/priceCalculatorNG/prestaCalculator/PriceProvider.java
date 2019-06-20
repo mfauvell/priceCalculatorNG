@@ -4,6 +4,6 @@ import es.jysa.priceCalculatorNG.prestaData.Price;
 
 public interface PriceProvider {
 
-	public Price getNewPrice(String code);
+	public Price getNewPrice(String code) throws NotPriceFindException;
 
 }

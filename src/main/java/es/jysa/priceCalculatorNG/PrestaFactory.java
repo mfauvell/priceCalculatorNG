@@ -26,4 +26,8 @@ public final class PrestaFactory {
 	public static Calculator getCalculator(PrestaConfig config) {
 		return new Calculator(config);
 	}
+
+	public static PrestaConfig getConfig(String jsonConfigFilePath) {
+		return new PrestaConfig(jsonConfigFilePath);
+	}
 }

@@ -2,6 +2,10 @@ package es.jysa.priceCalculatorNG.prestaData;
 
 public class PrestaConfig {
 
+	public PrestaConfig(String jsonConfigFilePath) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Double getBasicLimit() {
 		// TODO Auto-generated method stub
 		return null;

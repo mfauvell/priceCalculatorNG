@@ -53,13 +53,13 @@ class CalculatorTest {
 	}
 	
 	@ParameterizedTest(name = "obtainNewPriceTest: {arguments}")
-	@CsvSource({"3.81,4.95,3.81,7.81","4.81,6.25,4.81,7.50","30.81,40.05,30.81,44.06","30.0,30.0,30.0,39.0"})
-	void obtainNewPriceTest(Double cost, Double pvp, Double expectedCost, Double expectedPvp ) {
+	@CsvSource({"3.81,4.95,3.81,7.81","4.81,6.25,4.81,7.50","30.81,40.05,30.81,44.06","50.81,66.05,50.81,66.05","30.0,30.0,30.0,39.0"})
+	void obtainNewPriceTest(Double cost, Double pvp, Double expectedCost, Double expectedPvp ) throws NotPriceProviderException, NotPriceFindException {
 		Double costBrand = cost;
 		Double pvpBrand = pvp;
 		Double costResult = expectedCost;
 		Double pvpResult = expectedPvp;
-		//String referenceHasUpdate = "REF1";
+		
 		String codeHasUpdate = "CODE1";
 		Price priceHasUpdate = mock(Price.class);
 		
@@ -81,10 +81,31 @@ class CalculatorTest {
 		Price priceResult = calculator.calculatePrice(productHasUpdate);
 		
 		verify(priceProvider).getNewPrice(codeHasUpdate);
-		reset(priceProvider);
+		reset(priceProvider); //Reset priceProvider calls to ensure that verify check getNewPrice only is called once
 		
 		assertThat(priceResult.getCost()).isEqualTo(costResult);
 		assertThat(priceResult.getPvp()).isEqualTo(pvpResult);
+		
+	}
+	
+	@Test
+	void obtainNewPriceNoResult() throws NotPriceFindException {
+		String codeNotHasUpdate = "CODE2";
+		
+		Product productNotHasUpdate = mock(Product.class);
+		when(productNotHasUpdate.getCode()).thenReturn(codeNotHasUpdate);
+		
+		Calculator calculator = PrestaFactory.getCalculator(config);
+		
+		when(priceProvider.getNewPrice(codeNotHasUpdate)).thenThrow(NotPriceFindException.class);
+		
+		assertThrows(NotPriceProviderException.class, ()->{calculator.calculatePrice(productNotHasUpdate); }, 
+				"Must be throw NotPriceProviderException because there aren't priceProvider set");
+		
+		calculator.setPriceProvider(priceProvider);
+		
+		assertThrows(NotPriceFindException.class, ()->{calculator.calculatePrice(productNotHasUpdate); }, 
+				"Must be throw NotPriceFindException because there aren't a price to return");
 		
 	}
 	

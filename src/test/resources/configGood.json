@@ -1,0 +1,10 @@
+{
+	"BasicLimit" : "4",
+	"FirstLimit" : "30",
+	"SecondLimit" : "50",
+	"BasicIncrement" : "4",
+	"FirstPercentageIncrement" : "20",
+	"SecondPercentageIncrement" : "10",
+	"ThirdPercentageIncrement" : "0",
+	"EqualPercentageIncrement" : "30",
+}
