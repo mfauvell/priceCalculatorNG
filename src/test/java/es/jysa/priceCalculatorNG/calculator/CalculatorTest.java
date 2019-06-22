@@ -1,4 +1,4 @@
-package es.jysa.priceCalculatorNG.prestaCalculator;
+package es.jysa.priceCalculatorNG.calculator;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
@@ -10,9 +10,13 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import es.jysa.priceCalculatorNG.PrestaFactory;
-import es.jysa.priceCalculatorNG.prestaData.PrestaConfig;
-import es.jysa.priceCalculatorNG.prestaData.Price;
-import es.jysa.priceCalculatorNG.prestaData.Product;
+import es.jysa.priceCalculatorNG.calculator.Calculator;
+import es.jysa.priceCalculatorNG.calculator.NotPriceFindException;
+import es.jysa.priceCalculatorNG.calculator.NotPriceProviderException;
+import es.jysa.priceCalculatorNG.calculator.PriceProvider;
+import es.jysa.priceCalculatorNG.data.PrestaConfig;
+import es.jysa.priceCalculatorNG.data.Price;
+import es.jysa.priceCalculatorNG.data.Product;
 
 
 class CalculatorTest {

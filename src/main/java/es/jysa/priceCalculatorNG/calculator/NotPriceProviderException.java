@@ -1,4 +1,4 @@
-package es.jysa.priceCalculatorNG.prestaCalculator;
+package es.jysa.priceCalculatorNG.calculator;
 
 public class NotPriceProviderException extends Exception {
 	

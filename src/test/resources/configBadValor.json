@@ -1,5 +1,5 @@
 {
-	"BasicLimit" : "4",
+	"BasicLimit" : "error",
 	"FirstLimit" : "30",
 	"SecondLimit" : "50",
 	"BasicIncrement" : "4",

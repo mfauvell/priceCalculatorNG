@@ -1,4 +1,4 @@
-package es.jysa.priceCalculatorNG.prestaData;
+package es.jysa.priceCalculatorNG.data;
 
 public class Product {
 	

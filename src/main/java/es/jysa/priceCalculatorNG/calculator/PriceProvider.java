@@ -1,6 +1,6 @@
-package es.jysa.priceCalculatorNG.prestaCalculator;
+package es.jysa.priceCalculatorNG.calculator;
 
-import es.jysa.priceCalculatorNG.prestaData.Price;
+import es.jysa.priceCalculatorNG.data.Price;
 
 public interface PriceProvider {
 

@@ -1,10 +1,11 @@
 package es.jysa.priceCalculatorNG;
 
-import es.jysa.priceCalculatorNG.prestaCalculator.Calculator;
-import es.jysa.priceCalculatorNG.prestaData.PrestaConfig;
-import es.jysa.priceCalculatorNG.prestaData.Price;
-import es.jysa.priceCalculatorNG.prestaData.Product;
-import es.jysa.priceCalculatorNG.prestaData.ProductUpdate;
+import es.jysa.priceCalculatorNG.calculator.Calculator;
+import es.jysa.priceCalculatorNG.data.BadFileConfigException;
+import es.jysa.priceCalculatorNG.data.PrestaConfig;
+import es.jysa.priceCalculatorNG.data.Price;
+import es.jysa.priceCalculatorNG.data.Product;
+import es.jysa.priceCalculatorNG.data.ProductUpdate;
 
 public final class PrestaFactory {
 	private PrestaFactory() {
@@ -27,7 +28,7 @@ public final class PrestaFactory {
 		return new Calculator(config);
 	}
 
-	public static PrestaConfig getConfig(String jsonConfigFilePath) {
+	public static PrestaConfig getConfig(String jsonConfigFilePath) throws BadFileConfigException {
 		return new PrestaConfig(jsonConfigFilePath);
 	}
 }

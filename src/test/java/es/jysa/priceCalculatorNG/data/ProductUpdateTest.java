@@ -1,4 +1,4 @@
-package es.jysa.priceCalculatorNG.prestaData;
+package es.jysa.priceCalculatorNG.data;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,6 +7,8 @@ import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.Test;
 
 import es.jysa.priceCalculatorNG.PrestaFactory;
+import es.jysa.priceCalculatorNG.data.Price;
+import es.jysa.priceCalculatorNG.data.ProductUpdate;
 
 public class ProductUpdateTest {
 	
