@@ -6,6 +6,7 @@ import es.jysa.priceCalculatorNG.data.PrestaConfig;
 import es.jysa.priceCalculatorNG.data.Price;
 import es.jysa.priceCalculatorNG.data.Product;
 import es.jysa.priceCalculatorNG.data.ProductUpdate;
+import es.jysa.priceCalculatorNG.utils.PrestaCSVParser;
 
 public final class PrestaFactory {
 	private PrestaFactory() {
@@ -30,5 +31,9 @@ public final class PrestaFactory {
 
 	public static PrestaConfig getConfig(String jsonConfigFilePath) throws BadFileConfigException {
 		return new PrestaConfig(jsonConfigFilePath);
+	}
+
+	public static PrestaCSVParser getPrestaCSVParser() {
+		return new PrestaCSVParser();
 	}
 }
