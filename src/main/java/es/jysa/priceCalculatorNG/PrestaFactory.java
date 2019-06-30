@@ -1,6 +1,10 @@
 package es.jysa.priceCalculatorNG;
 
+import java.io.IOException;
+
 import es.jysa.priceCalculatorNG.calculator.Calculator;
+import es.jysa.priceCalculatorNG.calculator.PriceProvider;
+import es.jysa.priceCalculatorNG.calculator.PriceProviderPioneerDJ;
 import es.jysa.priceCalculatorNG.data.BadFileConfigException;
 import es.jysa.priceCalculatorNG.data.PrestaConfig;
 import es.jysa.priceCalculatorNG.data.Price;
@@ -35,5 +39,13 @@ public final class PrestaFactory {
 
 	public static PrestaCSVParser getPrestaCSVParser() {
 		return new PrestaCSVParser();
+	}
+
+	public static PriceProvider getPriceProvider(String priceProviderBrand, String pricePioneerList) throws IOException {
+		PriceProvider result = null;
+		if (priceProviderBrand.equals("PioneerDJ")) {
+			result = new PriceProviderPioneerDJ(pricePioneerList, ';', '"');
+		}
+		return result;
 	}
 }

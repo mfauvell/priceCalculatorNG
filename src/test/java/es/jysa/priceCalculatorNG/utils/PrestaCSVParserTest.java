@@ -4,10 +4,16 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 import es.jysa.priceCalculatorNG.PrestaFactory;
+import es.jysa.priceCalculatorNG.data.Price;
 import es.jysa.priceCalculatorNG.data.Product;
+import es.jysa.priceCalculatorNG.data.ProductUpdate;
 
 class PrestaCSVParserTest {
 
@@ -85,5 +91,44 @@ class PrestaCSVParserTest {
 		
 		PrestaCSVParser parser = PrestaFactory.getPrestaCSVParser();
 		assertThrows(ParserCSVErrorException.class, ()->{parser.getProducts(faultyRequireValueFilePath, delimiter, quote);}, "Throw ParserCSVErrorException because file has not a required value column");
+	}
+	
+	@Test
+	void testCreateUpdateCSV() {
+		ClassLoader classLoader = getClass().getClassLoader();
+		
+		Price newPrice1 = mock(Price.class);
+		when(newPrice1.getCost()).thenReturn(10.0);
+		when(newPrice1.getPvp()).thenReturn(15.0);
+		ProductUpdate productUpdate1 = mock(ProductUpdate.class);
+		when(productUpdate1.getReference()).thenReturn("REFERENCE1");
+		when(productUpdate1.getPrice()).thenReturn(newPrice1);
+		
+		Price newPrice2 = mock(Price.class);
+		when(newPrice2.getCost()).thenReturn(20.0);
+		when(newPrice2.getPvp()).thenReturn(25.0);
+		ProductUpdate productUpdate2 = mock(ProductUpdate.class);
+		when(productUpdate2.getReference()).thenReturn("REFERENCE2");
+		when(productUpdate2.getPrice()).thenReturn(newPrice2);
+		
+		List<ProductUpdate> listProductsUpdate = new ArrayList<>();
+		listProductsUpdate.add(productUpdate1);
+		listProductsUpdate.add(productUpdate2);
+		
+		String newFileName = "filenew.csv";
+		String newFilePath = "./src/test/resources/filenew.csv";
+		String expectedFileName = "fileexpected.csv";
+		
+		Character delimeter = ';';
+		Character quote = '"';
+		
+		PrestaCSVParser parser = PrestaFactory.getPrestaCSVParser();
+		
+		parser.createCSVUpdate(listProductsUpdate, newFilePath, delimeter, quote);
+		
+		File newFile = new File(classLoader.getResource(newFileName).getPath());
+		File expectedFile = new File(classLoader.getResource(expectedFileName).getPath());
+		
+		assertThat(newFile).hasSameContentAs(expectedFile);
 	}
 }
