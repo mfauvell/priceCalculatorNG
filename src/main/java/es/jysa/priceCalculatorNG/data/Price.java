@@ -12,9 +12,6 @@ public class Price {
 		if (pvp < 0) {
 			throw new IllegalArgumentException("Pvp: " + pvp + " is negative");
 		}
-		if (Double.compare(cost, pvp) > 0) {
-			throw new IllegalArgumentException("Cost: " + cost + " is greater than Pvp:" + pvp);
-		}
 		this.cost = cost;
 		this.pvp = pvp;
 	}

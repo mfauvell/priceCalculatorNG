@@ -1,6 +1,7 @@
 package es.jysa.priceCalculatorNG.calculator;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -53,7 +54,7 @@ public class PriceProviderPioneerDJ implements PriceProvider {
 				.withSeparator(delimeter)
 				.withQuoteChar(quote)
 				.build();
-		CSVReader reader = new CSVReaderBuilder(Files.newBufferedReader(Paths.get(filePath)))
+		CSVReader reader = new CSVReaderBuilder(Files.newBufferedReader(Paths.get(filePath),Charset.forName("ISO-8859-15")))
 				.withSkipLines(1)
 				.withCSVParser(parser)
 				.build();

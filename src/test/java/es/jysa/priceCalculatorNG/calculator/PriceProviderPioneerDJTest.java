@@ -2,7 +2,6 @@ package es.jysa.priceCalculatorNG.calculator;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 import java.io.IOException;
 
@@ -39,5 +38,5 @@ class PriceProviderPioneerDJTest {
 		
 		assertThrows(NotPriceFindException.class, () -> {pricePioneerDJ.getNewPrice(code6);}, "If code not in list must be thrown NotPriceFindException");
 	}
-
+	
 }

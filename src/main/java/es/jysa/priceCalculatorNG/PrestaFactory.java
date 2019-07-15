@@ -48,4 +48,8 @@ public final class PrestaFactory {
 		}
 		return result;
 	}
+	
+	public static Controller getController(String configPath, String tmpPath, Character delimiter, Character quote) {
+		return new Controller(configPath, tmpPath, delimiter, quote);
+	}
 }

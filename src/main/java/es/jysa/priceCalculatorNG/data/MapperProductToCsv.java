@@ -4,7 +4,7 @@ import com.opencsv.bean.CsvBindByName;
 
 public class MapperProductToCsv {
 	
-	@CsvBindByName(column = "Reference #",required = true)
+	@CsvBindByName(column = "Reference #")
 	private String reference;
 	@CsvBindByName(column = "Code")
 	private String code;

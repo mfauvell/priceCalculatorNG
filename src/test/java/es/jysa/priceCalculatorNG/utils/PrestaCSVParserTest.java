@@ -61,17 +61,6 @@ class PrestaCSVParserTest {
 	}
 	
 	@Test
-	void testEmptyFileProductsCSV() {
-		ClassLoader classLoader = getClass().getClassLoader();
-		String emptyFilePath = classLoader.getResource("productsEmptyFile.csv").getPath();
-		Character delimiter = ';';
-		Character quote = '"';
-		
-		PrestaCSVParser parser = PrestaFactory.getPrestaCSVParser();
-		assertThrows(ParserCSVErrorException.class, ()->{parser.getProducts(emptyFilePath, delimiter, quote);}, "Throw ParserCSVErrorException because file is empty");
-	}
-	
-	@Test
 	void testFaultyRequiredValueProductsCSV() {
 		ClassLoader classLoader = getClass().getClassLoader();
 		String faultyRequireValueFilePath = classLoader.getResource("productsFaultyRequiredValue.csv").getPath();

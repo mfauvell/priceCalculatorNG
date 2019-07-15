@@ -30,10 +30,4 @@ public class PriceTest {
 		assertThrows(IllegalArgumentException.class, () -> {PrestaFactory.getPrice(cost, badPvp);},"Here must throw IllegalArgumentException because pvp is negative" );
 	}
 	
-	@Test
-	public void createPriceCostGreaterPvpThrowExeption() {
-		double lowerPvp = 0.5;
-		
-		assertThrows(IllegalArgumentException.class, () -> {PrestaFactory.getPrice(cost, lowerPvp);}, "Here must throw IllegalArgumentException because cost is greater than pvp");
-	}
 }

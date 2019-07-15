@@ -34,3 +34,5 @@ gradlew.bat
 
 #Data from thirds
 /products.csv
+/DPS_Prices.txt
+/configTest.json
